@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature and Humidity Timeline</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+        .graph-container {
+            width: 45%;
+        }
+        .mean-container {
+            width: 20%;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Temperature and Humidity Information</h1>
+    <div class="container">
+        <!-- Temperature Graph and Mean -->
+        <div class="mean-container">
+            <h3>Temperature Mean</h3>
+            <p>{{ temperature_mean }} °C</p>
+        </div>
+        <div class="graph-container">
+            <h2>Temperature</h2>
+            {{ temperature_graph_div | safe }}
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <!-- Humidity Graph and Mean -->
+        <div class="mean-container">
+            <h3>Humidity Mean</h3>
+            <p>{{ humidity_mean }}%</p>
+        </div>
+        <div class="graph-container">
+            <h2>Humidity</h2>
+            {{ humidity_graph_div | safe }}
+        </div>
+    </div>
+</body>
+</html>
